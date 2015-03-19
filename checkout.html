@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="assets/stylesheets/bootstrap.min.css"/>
+    <link rel="stylesheet" href="assets/stylesheets/style.css"/>
+    <script src="assets/scripts/jquery-2.1.3.min.js"></script>
+    <script src="assets/scripts/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+          $('[data-toggle="tooltip"]').tooltip({
+              placement : 'right'
+          });
+      });
+    </script>
+    <title>UI Homies - Checkout</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-10 col-md-offset-1">
+          <h1>Secure Checkout</h1>
+          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            
+            <!-- Personal Information -->
+
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingOne">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Personal Information
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                <form class="form-horizontal" style="padding:10px;">
+                  <div class="form-group">
+                    <label for="firstName" class="col-sm-2 control-label">*First Name</label>
+                    <div class="col-sm-5">
+                      <input type="text" class="form-control" id="firstName">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="lastName" class="col-sm-2 control-label">*Last Name</label>
+                    <div class="col-sm-5">
+                      <input type="text" class="form-control" id="lastName">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="emailAddress" class="col-sm-2 control-label">*Email Address</label>
+                    <div class="col-sm-5">
+                      <input type="email" class="form-control" id="emailAddress">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-offset-6 col-sm-10">
+                      <button type="button" class="btn btn-primary" data-toggle="collapse" data-parent="#accordion" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Next  <span class="glyphicon glyphicon-chevron-right"></span>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          
+          <!-- Delivery -->
+
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingTwo">
+                <h4 class="panel-title">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Delivery Address
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                <form class="form-horizontal" style="padding:10px;">
+                  <div class="form-group">
+                    <label for="streetAddress1" class="col-sm-2 control-label">*Street Address 1</label>
+                    <div class="col-sm-5">
+                      <input type="text" class="form-control" id="streetAddress1">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="streetAddress2" class="col-sm-2 control-label">Street Address 2</label>
+                    <div class="col-sm-5">
+                      <input type="text" class="form-control" id="streetAddress2">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="city" class="col-sm-2 control-label">*City</label>
+                    <div class="col-sm-5">
+                      <input type="text" class="form-control" id="city">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="province" class="col-sm-2 control-label">*Province</label>
+                    <div class="col-sm-5">
+                      <select class="form-control">
+                        <option>Select a Province</option>
+                        <option>Alberta</option>
+                        <option>British Colombia</option>
+                        <option>Manitoba</option>
+                        <option>New Brunswick</option>
+                        <option>Newfoundland and Labrador</option>
+                        <option>Nova Scotia</option>
+                        <option>Nunavut</option>
+                        <option>Ontario</option>
+                        <option>Prince Edward Island</option>
+                        <option>Quebec</option>
+                        <option>Saskatchewan</option>
+                        <option>Yukon</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="postalCode" class="col-sm-2 control-label">*Postal Code</label>
+                    <div class="col-sm-5">
+                      <input type="text" class="form-control" id="postalCode">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-offset-6 col-sm-10">
+                      <button type="button" class="btn btn-primary" data-toggle="collapse" data-parent="#accordion" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Next  <span class="glyphicon glyphicon-chevron-right"></span>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            
+            <!-- Shipping -->
+
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingThree">
+                <h4 class="panel-title">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Shipping
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                <form class="form-horizontal" style="padding:10px;">
+                  <div class="radio">
+                    <label>
+                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="checked">
+                        <b><i>Standard Shipping</i> - $6.94</b>
+                        <br/>Delivered by April 4
+                    </label>
+                  </div>
+                  <div class="radio">
+                    <label>
+                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                        <b><i>Express Shipping</i> - $14.95</b>
+                        <br/>Delivered by March 27
+                    </label>
+                  </div>
+                  <div class="radio">
+                    <label>
+                        <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
+                        <b><i>Next-day Delivery</i> - $25.99</b>
+                        <br/>Delivery on March 24
+                    </label>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm col-sm-10" style="padding-top:10px;">
+                      <button type="button" class="btn btn-primary" data-toggle="collapse" data-parent="#accordion" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        Next  <span class="glyphicon glyphicon-chevron-right"></span>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <!-- Payment -->
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingFour">
+                <h4 class="panel-title">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    Payment
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                <form class="form-horizontal" style="padding:10px;">
+                  <div class="form-group">
+                    <label for="firstName" class="col-sm-2 control-label">*Card Type</label>
+                    <div class="col-sm-5">
+                        <label class="radio-inline">
+                          <input type="radio" name="optradio" style="position:relative">
+                            <img src="assets/img/Visa-icon.png" style="float:right;width:45px;height:41px">
+                        </label>
+                        <label class="radio-inline">
+                          <input type="radio" name="optradio" style="position:relative">
+                            <img src="assets/img/Mastercard-icon.png" style="float:right;width:45px;height:41px">
+                        </label>
+                        <label class="radio-inline">
+                          <input type="radio" name="optradio" style="position:relative">
+                            <img src="assets/img/American-Express-icon.png" style="float:right;width:45px;height:41px">
+                        </label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="firstName" class="col-sm-2 control-label">*Name on Card</label>
+                    <div class="col-sm-5">
+                      <input type="text" class="form-control" id="firstName">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="lastName" class="col-sm-2 control-label">*Card Number</label>
+                    <div class="col-sm-5">
+                      <input type="text" class="form-control" id="lastName">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="emailAddress" class="col-sm-2 control-label">*Expiry Date</label>
+                    <div class="col-sm-2">
+                      <select class="form-control">
+                        <option>Month</option>
+                        <option>01</option>
+                        <option>02</option>
+                        <option>03</option>
+                        <option>04</option>
+                        <option>05</option>
+                        <option>06</option>
+                        <option>07</option>
+                        <option>08</option>
+                        <option>09</option>
+                        <option>10</option>
+                        <option>11</option>
+                        <option>12</option>
+                      </select>
+                    </div>
+                    <div class="col-sm-2">
+                      <select class="form-control">
+                        <option>Year</option>
+                        <option>2015</option>
+                        <option>2016</option>
+                        <option>2017</option>
+                        <option>2018</option>
+                        <option>2019</option>
+                        <option>2020</option>
+                        <option>2021</option>
+                        <option>2022</option>
+                        <option>2023</option>
+                        <option>2024</option>
+                        <option>2025</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="security" class="col-sm-2 control-label">*Security Code</label>
+                    <div class="col-sm-2">
+                      <input type="text" class="form-control" id="security">
+                    </div>
+                    <a href="#" class="btn btn-primary btn-circle" data-toggle="tooltip" title="Mastercard and Visa cards have a 3 digit code printed on the signature panel at the back of your card. American Express cards have a 4 digit number on the front of the card." data-original-title="Default tooltip">?</a>
+                  </div>
+                  <div class="form-group">
+                    <label for="security" class="col-sm-offset-4 col-sm-2 control-label"><i>Total</i></label>
+                    <div class="col-sm-2">
+                      <h5>$104.56</h5>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-offset-5 col-sm-10">
+                      <button type="button" class="btn btn-success" data-toggle="modal" data-target="#paymentModal">
+                        Place Order &nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-ok"></span>
+                      </button>
+                      <div class="modal fade" id="paymentModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                              <h4 class="modal-title" id="myModalLabel">Payment Confirmation</h4>
+                            </div>
+                            <div class="modal-body">
+                              Your credit card has been charged with an amount of $104.56. Thank you for shopping with us!
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>
