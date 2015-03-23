@@ -36,6 +36,17 @@ h1 {
   margin-bottom: 30px;
 }
 
+.showing{
+  margin-bottom: 25px;
+}
+.showing h4{
+  display: inline-block;
+}
+.showing h5{
+  display: inline-block;
+  float: right;
+}
+
 .dropdown{
   display: inline-block;
 }

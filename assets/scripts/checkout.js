@@ -42,6 +42,9 @@ function validatePersonalInfo()
     document.getElementById("firstName div").className = "form-group has-error";
   } else {
     document.getElementById("firstName div").className = "form-group";
+    if(document.getElementById("firstNameError") != null) {
+      document.getElementById("firstNameError").innerHTML = "";
+    }
     $('#collapseOne').collapse('hide');
   }
 
@@ -62,6 +65,9 @@ function validatePersonalInfo()
     document.getElementById("lastName div").className = "form-group has-error";
   } else {
     document.getElementById("lastName div").className = "form-group";
+    if(document.getElementById("lastNameError") != null) {
+      document.getElementById("lastNameError").innerHTML = "";
+    }
     $('#collapseOne').collapse('hide');
   }
 
@@ -82,6 +88,9 @@ function validatePersonalInfo()
     document.getElementById("emailAddress div").className = "form-group has-error";
   } else {
     document.getElementById("emailAddress div").className = "form-group";
+    if(document.getElementById("emailAddressError") != null) {
+      document.getElementById("emailAddressError").innerHTML = "";
+    }
     $('#collapseOne').collapse('hide');
   }
 }
@@ -123,6 +132,9 @@ function validateDeliveryAddress()
     document.getElementById("city div").className = "form-group has-error";
   } else {
     document.getElementById("city div").className = "form-group";
+    if(document.getElementById("cityError") != null) {
+      document.getElementById("cityError").innerHTML = "";
+    }
     $('#collapseTwo').collapse('hide');
   }
 
@@ -154,6 +166,9 @@ function validateDeliveryAddress()
     document.getElementById("postalCode div").className = "form-group has-error";
   } else {
     document.getElementById("postalCode div").className = "form-group";
+    if(document.getElementById("postalCodeError") != null) {
+      document.getElementById("postalCodeError").innerHTML = "";
+    }
     $('#collapseTwo').collapse('hide');
   }
 }
@@ -178,16 +193,28 @@ function validatePayment()
     if(document.getElementById("nameOnCardError") == null)
       $('#nameOnCard').after('<span id="nameOnCardError" style="color:#a74544">Name on card must have letters and spaces only</span>');
     document.getElementById("nameOnCard div").className = "form-group has-error";
+    paymentValid = false;
   } else {
     document.getElementById("nameOnCard div").className = "form-group";
+    if(document.getElementById("nameOnCardError") != null) {
+      document.getElementById("nameOnCardError").innerHTML = "";
+    }
   }
 
   if(cardNumber == "") {
     document.getElementById("cardNumber").placeholder = "Card number required...";
     document.getElementById("cardNumber div").className = "form-group has-error";
     paymentValid = false;
+  } else if(!cardNumber.match(/^(?:4[0-9]{12}(?:[0-9]{3})?)/)) {
+    if(document.getElementById("cardNumberError") == null)
+      $('#cardNumber').after('<span id="cardNumberError" style="color:#a74544">Invalid credit card number</span>');
+    document.getElementById("cardNumber div").className = "form-group has-error";
+    paymentValid = false;
   } else {
     document.getElementById("cardNumber div").className = "form-group";
+    if(document.getElementById("cardNumberError") != null) {
+      document.getElementById("cardNumberError").innerHTML = "";
+    }
   }
 
   if(month == "Month") {
@@ -208,8 +235,16 @@ function validatePayment()
     document.getElementById("securityCode").placeholder = "Code required...";
     document.getElementById("securityCode div").className = "form-group has-error";
     paymentValid = false;
+  } else if(!securityCode.match(/^[0-9]{3,4}$/)) {
+    if(document.getElementById("securityCodeError") == null)
+      $('#securityCode').after('<span id="securityCodeError" style="color:#a74544">Invalid security code</span>');
+    document.getElementById("securityCode div").className = "form-group has-error";
+    paymentValid = false;
   } else {
     document.getElementById("securityCode div").className = "form-group";
+    if(document.getElementById("securityCodeError") != null) {
+      document.getElementById("securityCodeError").innerHTML = "";
+    }
   }
 
   if(paymentValid == true)
@@ -242,4 +277,9 @@ function secondNextPressed()
 function placeOrderPressed()
 {
   validatePayment();
+}
+
+function confirmBackHome() {
+  var confirmation = confirm("Are you sure you want to cancel your checkout?");
+  return confirmation;
 }
