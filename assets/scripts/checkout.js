@@ -278,3 +278,8 @@ function placeOrderPressed()
 {
   validatePayment();
 }
+
+function confirmBackHome() {
+  var confirmation = confirm("Are you sure you want to cancel your checkout?");
+  return confirmation;
+}
