@@ -32,22 +32,6 @@ h1 {
   text-align: center;
 }
 
-.badge-danger {
-  background-color: #d43f3a;
-}
-
-.badge-warning {
-  background-color: #d58512;
-}
-
-.badge-success {
-  background-color: #398439;
-}
-
-.badge-info {
-  background-color: #269abc;
-}
-
-.badge-inverse {
-  background-color: #333333;
+.container h2{
+  margin-bottom: 30px;
 }
