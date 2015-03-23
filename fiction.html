@@ -75,11 +75,20 @@
     </div>
     </div> 
     <div class="container">
-          <p><h4>Showing 1-6 of 8 results</h4> <h4>Sort by: Popularity</h4></p>
+          <p><h4>Showing 1-6 of 8 results</h4>
+           <h4>Sort by: <div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+    Popularity
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Popularity</a></li>
+  </ul>
+</div></h4></p>
           <div class="row">
           <div class="col-md-4">
             <img src="assets/img/Halo-Fall-Of-Reach-Icon.jpg" class="img-responsive" alt="Halo The Fall of Reach" style="width: 162px; height: 260px;"/>
-            <h4>Halo: The Fall of Reach</h4>
+            <a href="bookinfo.html"><h4>Halo: The Fall of Reach</h4></a>
             <h5>by Eric Nylund</h5>
             <h5>CDN$ 9.92</h5>
             <p>Status: <span class="text-success"><strong>In Stock</strong></p>
@@ -87,15 +96,15 @@
           </div>
           <div class="col-md-4">
             <img src="assets/img/Welcome-To-Night-Vale.jpg" class="img-responsive" alt="Welcome to Night Vale" style="width: 162px; height: 260px;"/>
-            <h4>Welcome to Night Vale</h4>
+            <a href="bookinfo.html"><h4>Welcome to Night Vale</h4></a>
             <h5>by Joseph Fink &amp; Jeffrey Cranor</h5>
             <h5>CDN$ 13.30</h5>
-            <p>Status: <span class="text-success"><strong>In Stock</strong></p>
-            <button type="button" class="btn btn-primary" onClick="addToBasket()"><span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart</button>
+            <p>Status: <span class="text-danger"><strong>Out of Stock</strong></p>
+            <button type="button" class="btn btn-danger disabled"><span class="glyphicon glyphicon-remove"></span> Out of Stock</button>
           </div>
           <div class="col-md-4">
             <img src="assets/img/Mass-Effect-Library-Volume-1.jpg" class="img-responsive" alt="Mass Effect Library Edition Volume 1" style="width: 162px; height: 260px;"/>
-            <h4>Mass Effect Library Edition Volume 1</h4>
+            <a href="bookinfo.html"><h4>Mass Effect Library Edition Volume 1</h4></a>
             <h5>by Mac Walters, Omar Francia &amp; John Jackson Miller</h5>
             <h5>CDN$ 9.92</h5>
             <p>Status: <span class="text-success"><strong>In Stock</strong></p>
@@ -111,7 +120,7 @@
           </div>
           <div class="col-md-4">
             <img src="assets/img/Welcome-To-Night-Vale.jpg" class="img-responsive" alt="Welcome to Night Vale" style="width: 162px; height: 260px;"/>
-            <h4>Welcome to Night Vale</h4>
+            <a href="bookinfo.html"><h4>Welcome to Night Vale</h4></a>
             <h5>by Joseph Fink &amp; Jeffrey Cranor</h5>
             <h5>CDN$ 13.30</h5>
             <p>Status: <span class="text-success"><strong>In Stock</strong></p>
@@ -119,7 +128,7 @@
           </div>
           <div class="col-md-4">
             <img src="assets/img/Harry-Potter-icon.jpg" class="img-responsive" alt="Mass Effect Library Edition Volume 1" style="width: 162px; height: 260px;"/>
-            <h4>Harry Potter and the Chamber of Secrets</h4>
+            <a href="bookinfo.html"><h4>Harry Potter and the Chamber of Secrets</h4></a>
             <h5>by J.K. Rowling</h5>
             <h5>CDN$ 15.99</h5>
             <p>Status: <span class="text-success"><strong>In Stock</strong></p>
