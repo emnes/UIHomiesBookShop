@@ -207,7 +207,7 @@ function validatePayment()
     paymentValid = false;
   } else if(!cardNumber.match(/^(?:4[0-9]{12}(?:[0-9]{3})?)/)) {
     if(document.getElementById("cardNumberError") == null)
-      $('#cardNumber').after('<span id="cardNumberError" style="color:#a74544">Invalid credit card number. Needs to be 12 digits.</span>');
+      $('#cardNumber').after('<span id="cardNumberError" style="color:#a74544">Invalid credit card number.</span>');
     document.getElementById("cardNumber div").className = "form-group has-error";
     paymentValid = false;
   } else {
@@ -237,7 +237,7 @@ function validatePayment()
     paymentValid = false;
   } else if(!securityCode.match(/^[0-9]{3,4}$/)) {
     if(document.getElementById("securityCodeError") == null)
-      $('#securityCode').after('<span id="securityCodeError" style="color:#a74544">Invalid security code. Needs to be 3 or 4 digits.</span>');
+      $('#securityCode').after('<span id="securityCodeError" style="color:#a74544">Invalid security code.</span>');
     document.getElementById("securityCode div").className = "form-group has-error";
     paymentValid = false;
   } else {
