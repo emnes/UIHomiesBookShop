@@ -35,3 +35,8 @@ h1 {
 .container h2{
   margin-bottom: 30px;
 }
+
+.pagination{
+  margin: auto;
+  text-align: center;
+}
