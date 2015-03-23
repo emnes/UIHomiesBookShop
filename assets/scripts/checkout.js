@@ -30,7 +30,15 @@ function validatePersonalInfo()
     $('#collapseTwo').collapse('hide');
     $('#collapseThree').collapse('hide');
     $('#collapseFour').collapse('hide');
-    document.getElementById("firstName").placeholder = "Enter first name...";
+    document.getElementById("firstName").placeholder = "First name required...";
+    document.getElementById("firstName div").className = "form-group has-error";
+  } else if(!firstName.match(/^[A-Za-z]+$/)) {
+    $('#collapseOne').collapse('show');
+    $('#collapseTwo').collapse('hide');
+    $('#collapseThree').collapse('hide');
+    $('#collapseFour').collapse('hide');
+    if(document.getElementById("firstNameError") == null)
+      $('#firstName').after('<span id="firstNameError" style="color:#a74544">First name must have letters only</span>');
     document.getElementById("firstName div").className = "form-group has-error";
   } else {
     document.getElementById("firstName div").className = "form-group";
@@ -42,7 +50,15 @@ function validatePersonalInfo()
     $('#collapseTwo').collapse('hide');
     $('#collapseThree').collapse('hide');
     $('#collapseFour').collapse('hide');
-    document.getElementById("lastName").placeholder = "Enter last name...";
+    document.getElementById("lastName").placeholder = "Last name required...";
+    document.getElementById("lastName div").className = "form-group has-error";
+  } else if(!lastName.match(/^[A-Za-z]+$/)) {
+    $('#collapseOne').collapse('show');
+    $('#collapseTwo').collapse('hide');
+    $('#collapseThree').collapse('hide');
+    $('#collapseFour').collapse('hide');
+    if(document.getElementById("lastNameError") == null)
+      $('#lastName').after('<span id="lastNameError" style="color:#a74544">Last name must have letters only</span>');
     document.getElementById("lastName div").className = "form-group has-error";
   } else {
     document.getElementById("lastName div").className = "form-group";
@@ -54,10 +70,18 @@ function validatePersonalInfo()
     $('#collapseTwo').collapse('hide');
     $('#collapseThree').collapse('hide');
     $('#collapseFour').collapse('hide');
-    document.getElementById("emailAddress").placeholder = "Enter email address...";
-    document.getElementById("email div").className = "form-group has-error";
+    document.getElementById("emailAddress").placeholder = "Email address required...";
+    document.getElementById("emailAddress div").className = "form-group has-error";
+  } else if(!emailAddress.match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)) {
+    $('#collapseOne').collapse('show');
+    $('#collapseTwo').collapse('hide');
+    $('#collapseThree').collapse('hide');
+    $('#collapseFour').collapse('hide');
+    if(document.getElementById("emailAddressError") == null)  
+      $('#emailAddress').after('<span id="emailAddressError" style="color:#a74544">Wrong email format</span>');
+    document.getElementById("emailAddress div").className = "form-group has-error";
   } else {
-    document.getElementById("email div").className = "form-group";
+    document.getElementById("emailAddress div").className = "form-group";
     $('#collapseOne').collapse('hide');
   }
 }
@@ -75,7 +99,7 @@ function validateDeliveryAddress()
     $('#collapseTwo').collapse('show');
     $('#collapseThree').collapse('hide');
     $('#collapseFour').collapse('hide');
-    document.getElementById("streetAddress1").placeholder = "Enter street address...";
+    document.getElementById("streetAddress1").placeholder = "Street address required...";
     document.getElementById("streetAddress1 div").className = "form-group has-error";
   } else {
     document.getElementById("streetAddress1 div").className = "form-group";
@@ -87,7 +111,15 @@ function validateDeliveryAddress()
     $('#collapseTwo').collapse('show');
     $('#collapseThree').collapse('hide');
     $('#collapseFour').collapse('hide');
-    document.getElementById("city").placeholder = "Enter city...";
+    document.getElementById("city").placeholder = "City required...";
+    document.getElementById("city div").className = "form-group has-error";
+  } else if(!city.match(/^[A-Za-z]+$/)) {
+    $('#collapseOne').collapse('hide');
+    $('#collapseTwo').collapse('show');
+    $('#collapseThree').collapse('hide');
+    $('#collapseFour').collapse('hide');
+    if(document.getElementById("cityError") == null)
+      $('#city').after('<span id="cityError" style="color:#a74544">City must have letters only</span>');
     document.getElementById("city div").className = "form-group has-error";
   } else {
     document.getElementById("city div").className = "form-group";
@@ -110,7 +142,15 @@ function validateDeliveryAddress()
     $('#collapseTwo').collapse('show');
     $('#collapseThree').collapse('hide');
     $('#collapseFour').collapse('hide');
-    document.getElementById("postalCode").placeholder = "Enter postal code...";
+    document.getElementById("postalCode").placeholder = "Postal code required...";
+    document.getElementById("postalCode div").className = "form-group has-error";
+  } else if(!postalCode.match(/^[ABCEGHJKLMNPRSTVXY]\d[ABCEGHJKLMNPRSTVWXYZ]( )?\d[ABCEGHJKLMNPRSTVWXYZ]\d$/i)) {
+    $('#collapseOne').collapse('hide');
+    $('#collapseTwo').collapse('show');
+    $('#collapseThree').collapse('hide');
+    $('#collapseFour').collapse('hide');
+    if(document.getElementById("postalCodeError") == null)
+      $('#postalCode').after('<span id="postalCodeError" style="color:#a74544">Postal code must have one of the following formats: A1A1A1 or A1A 1A1</span>');
     document.getElementById("postalCode div").className = "form-group has-error";
   } else {
     document.getElementById("postalCode div").className = "form-group";
@@ -131,15 +171,19 @@ function validatePayment()
   var paymentValid = true;
 
   if(nameOnCard == "") {
-    document.getElementById("nameOnCard").placeholder = "Enter name on card...";
+    document.getElementById("nameOnCard").placeholder = "Name on card required...";
     document.getElementById("nameOnCard div").className = "form-group has-error";
     paymentValid = false;
+  } else if(!nameOnCard.match(/^[A-Za-z\s]+$/)) {
+    if(document.getElementById("nameOnCardError") == null)
+      $('#nameOnCard').after('<span id="nameOnCardError" style="color:#a74544">Name on card must have letters and spaces only</span>');
+    document.getElementById("nameOnCard div").className = "form-group has-error";
   } else {
     document.getElementById("nameOnCard div").className = "form-group";
   }
 
   if(cardNumber == "") {
-    document.getElementById("cardNumber").placeholder = "Enter card number...";
+    document.getElementById("cardNumber").placeholder = "Card number required...";
     document.getElementById("cardNumber div").className = "form-group has-error";
     paymentValid = false;
   } else {
@@ -161,7 +205,7 @@ function validatePayment()
   }
 
   if(securityCode == "") {
-    document.getElementById("securityCode").placeholder = "Enter code...";
+    document.getElementById("securityCode").placeholder = "Code required...";
     document.getElementById("securityCode div").className = "form-group has-error";
     paymentValid = false;
   } else {
